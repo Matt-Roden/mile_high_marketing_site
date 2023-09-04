@@ -17,7 +17,7 @@ const review_cards_info = [
 
 const Testimonials = () => {
   return (
-    <div className="bg-white md:mx-20 h-screen">
+    <div className=" md:mx-20 py-10">
       <div className=" flex flex-col justify-center items-center sm:flex-row sm:justify-around space-y-20 h-full ">
         {review_cards_info.map((card, index) => {
           return <ReviewCard 

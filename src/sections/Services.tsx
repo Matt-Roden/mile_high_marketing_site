@@ -5,14 +5,15 @@ import karaoke_icon from "../assets/karaoke_icon.png";
 
 const Services = () => {
   return (
-    <div className="bg-white mx-20 h-screen">
-      <div className=" flex flex-col justify-center items-center space-y-20 h-full">
+    <div className=" sm:mx-20">
+      <div className=" flex flex-col justify-center items-center sm:space-y-20 h-full"> 
         <div>
-          <h1 className=" text-6xl">Services</h1>
+          <h1 className=" text-6xl my-8">Services</h1>
         </div>
 
-        <div className=" w-full h-1/2 flex justify-around space-x-10 px-5">
-          <div className=" w-1/3  flex flex-col justify-around items-center space-y-5">
+        <div className=" w-full flex flex-col justify-center sm:flex sm:justify-around space-y-10 sm:space-x-10 px-5">
+
+          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4 bg-">
             <img
               src={dj_icon}
               className=" h-40"
@@ -27,7 +28,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className=" w-1/3  flex flex-col justify-around items-center space-y-5">
+          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3  flex flex-col justify-around items-center space-y-5 py-4">
             <img
               src={audio_editing_icon}
               className=" h-40"
@@ -42,7 +43,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className=" w-1/3  flex flex-col justify-around items-center space-y-5">
+          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3  flex flex-col justify-around items-center space-y-5 py-4">
             <img
               src={karaoke_icon}
               className=" h-40"
@@ -57,6 +58,7 @@ const Services = () => {
             </p>
           </div>
         </div>
+
       </div>
     </div>
   );

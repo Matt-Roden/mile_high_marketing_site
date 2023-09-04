@@ -6,20 +6,20 @@ import Testimonials from "../sections/Testimonials";
 
 const Homepage = () => {
   return (
-    <>
-      <section>
+    <main>
+      <section className=" dshadow-lg">
         <Hero />
       </section>
-      <section>
+      <section className=" bg-gradient-to-r from-slate-100 to-white">
         <Services />
       </section>
-      <section>
+      <section className=" bg-gradient-to-r from-slate-100 to-white">
         <Testimonials />
       </section>
       {/* <section>
         <Footer />
       </section> */}
-    </>
+    </main>
   );
 };
 

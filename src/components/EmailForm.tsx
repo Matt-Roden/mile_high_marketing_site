@@ -1,95 +1,100 @@
 import React, { useRef } from "react";
-import { Box, Button, Card, Grid, TextField, Typography } from "@mui/material";
-
+import { Checkbox, TextField, FormControlLabel } from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateField } from "@mui/x-date-pickers/DateField";
 import emailjs from "@emailjs/browser";
+import {useNavigate} from 'react-router-dom';
+
+const Date = () => {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DateField
+        id="date"
+        label="Date of Event: "
+        name="date_of"
+        className=" w-1/2"
+      />
+    </LocalizationProvider>
+  );
+};
 
 const EmailForm = () => {
   const form = useRef();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    console.log(form.current);
-
-    // emailjs
-    //   .sendForm(
-    //     "service_koe7hxh",
-    //     "template_69up1hn",
-    //     form.current,
-    //     "iJ_W9mK1_fbgqFPFw"
-    //   )
-    //   .then((result) => {
-    //     console.log(result.text);
-    //   });
+    await emailjs
+      .sendForm(
+        "service_koe7hxh",
+        "template_69up1hn",
+        form.current,
+        "iJ_W9mK1_fbgqFPFw"
+      )
+      .then((result) => {
+        if (result.text === "OK") {
+          navigate('/')
+        };
+      });
   };
 
   return (
-    <Box padding={10} className="bg-black h-screen">
-      <Card sx={{ minWidth: 275, bgcolor: "#DDDDDD", padding: "16px" }}>
+    <main className="h-screen flex flex-col items-center justify-center">
+      <div className=" flex flex-col items-center space-y-10">
+        <h1>Let's do this! 🪩</h1>
         <form ref={form} onSubmit={handleSubmit}>
-          <Grid
-            container
-            spacing={2}
-            direction={"column"}
-            // style={{ width: "800px" }}
-          >
-            <Grid item xs>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                Send us an email
-              </Typography>
-            </Grid>
-            <Grid container className="p-4">
-              <Grid item xs={6}>
-                <TextField
-                  id="name-field"
-                  label="Your Name: "
-                  variant="outlined"
-                  name="name_from"
+          <div className=" flex flex-col space-y-10  w-96 sm:min-w-max px-4">
+            <TextField
+              id="name-field"
+              label="Your Name: "
+              variant="outlined"
+              name="name_from"
+              className=""
+            />
+            <TextField
+              id="email-field"
+              label="Your Email: "
+              variant="outlined"
+              name="email_from"
+            />
+            <div className=" flex space-x-5 ">
+              <Date />
+              <div className=" space-x-3 flex items-center">
+                <input
+                  type="checkbox"
+                  id="not_sure_date"
+                  name="not_sure_date"
+                  value="true"
+                  className=" h-5 w-5"
                 />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  id="email-field"
-                  label="Your Email: "
-                  variant="outlined"
-                  name="email_from"
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  id="phone-field"
-                  label="Your Phone Number: "
-                  variant="outlined"
-                  name="phone_number"
-                />
-              </Grid>
-            </Grid>
-            <Grid item xs>
+                <label className=" text-lg">Not sure yet</label>
+              </div>
+            </div>
+            <div className=" flex flex-col space-y-3">
+              <span>What can we help you with? Give us the details!</span>
               <TextField
-                id="mesaage-field"
-                label="Message: "
+                id="message-field"
+                label=""
                 variant="outlined"
                 multiline
                 minRows={8}
                 name="message"
               />
-            </Grid>
-            <Grid item xs>
+            </div>
+            <div className=" flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-blue-600 w-52 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
-                Send
+                Send email
               </button>
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         </form>
-      </Card>
-    </Box>
+      </div>
+    </main>
   );
 };
 
