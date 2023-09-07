@@ -3,7 +3,7 @@ import mile_high_icon from "../assets/mile_high_icon.png";
 
 const CallToActionBox = () => {
   return (
-    <div className=" sm:w-1/2 flex  px-7">
+    <div className=" sm:w-1/2 flex px-7 sm:px-16">
       <div className=" text-center sm:text-start">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight sm:text-6xl text-white">
           Your <span className="text-blue-600">soundtrack</span> awaits.
@@ -19,16 +19,15 @@ const CallToActionBox = () => {
 
 const Hero = () => {
   return (
-    // <div className="bg-black h-screen sm:flex sm:justify-center">
-      <div className=" bg-black flex">
-        <div className=" space-y-16 flex flex-col sm:flex-row justify-between items-center w-full py-20 ">
-          <div className=" px-4 sm:w-1/2 sm:h-3/5 flex justify-center items-center">
-            <img src={mile_high_icon} alt="company logo" />;
-          </div>
-          <CallToActionBox />
-        </div>
-      </div>
-    // </div>
+    <div className=" bg-black flex space-y-16 flex-col sm:flex-row justify-around items-center w-full py-20">
+      <img
+        className=" px-20 sm:order-last"
+        src={mile_high_icon}
+        alt="company logo"
+      />
+      ;
+      <CallToActionBox />
+    </div>
   );
 };
 

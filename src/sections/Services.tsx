@@ -6,12 +6,12 @@ import karaoke_icon from "../assets/karaoke_icon.png";
 const Services = () => {
   return (
     <div className=" sm:mx-20">
-      <div className=" flex flex-col justify-center items-center sm:space-y-20 h-full"> 
+      <div className=" flex flex-col justify-center items-center sm:space-y-15 h-full"> 
         <div>
           <h1 className=" text-6xl my-8">Services</h1>
         </div>
 
-        <div className="  flex flex-col sm:flex-row justify-center sm:justify-around space-x-5 px-5">
+        <div className="  flex flex-col sm:flex-row justify-center sm:justify-around sm:space-x-5 px-5 ">
 
           <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
             <img

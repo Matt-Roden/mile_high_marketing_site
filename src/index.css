@@ -56,3 +56,19 @@
     @apply font-montserrat text-slate-gray text-lg leading-7;
   }
 }
+
+/* ::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: transparent; 
+} 
+::-webkit-scrollbar {
+  width: 0;
+} */
+
+
+
+/* For Firefox */
+/* scrollbar-width: thin;
+scrollbar-color: transparent transparent; */

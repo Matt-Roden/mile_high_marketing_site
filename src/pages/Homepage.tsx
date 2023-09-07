@@ -11,7 +11,7 @@ const Homepage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector(".heromatt").clientHeight;
+      const heroSection = document.querySelector(".heroSection").clientHeight;
 
       // Check if the top of the Hero section is below the viewport
       if (window.scrollY > heroSection) {
@@ -29,7 +29,7 @@ const Homepage = () => {
   }, []);
   return (
     <main>
-      <section className="heromatt dshadow-lg">
+      <section className="heroSection dshadow-lg">
         <Hero />
       </section>
       <Nav showNavbar={showNavbar}/>
