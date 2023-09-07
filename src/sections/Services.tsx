@@ -11,9 +11,9 @@ const Services = () => {
           <h1 className=" text-6xl my-8">Services</h1>
         </div>
 
-        <div className=" w-full flex flex-col justify-center sm:flex sm:justify-around space-y-10 sm:space-x-10 px-5">
+        <div className="  flex flex-col sm:flex-row justify-center sm:justify-around space-x-5 px-5">
 
-          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4 bg-">
+          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
             <img
               src={dj_icon}
               className=" h-40"
@@ -28,7 +28,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3  flex flex-col justify-around items-center space-y-5 py-4">
+          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
             <img
               src={audio_editing_icon}
               className=" h-40"
@@ -43,7 +43,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3  flex flex-col justify-around items-center space-y-5 py-4">
+          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
             <img
               src={karaoke_icon}
               className=" h-40"

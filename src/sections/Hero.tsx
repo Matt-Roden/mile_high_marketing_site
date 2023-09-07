@@ -8,7 +8,7 @@ const CallToActionBox = () => {
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight sm:text-6xl text-white">
           Your <span className="text-blue-600">soundtrack</span> awaits.
         </h1>
-        <p className="mt-6 text-xl leading-8 text-gray-300 ">
+        <p className="mt-6 mb-8 text-xl leading-8 text-gray-300 ">
           Every event deserves the best. Let's make it resonate.
         </p>
         <GetStartedButton />
