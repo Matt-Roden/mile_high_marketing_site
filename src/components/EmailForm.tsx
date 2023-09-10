@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Checkbox, TextField, FormControlLabel } from "@mui/material";
+import { TextField } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
@@ -46,7 +46,7 @@ const EmailForm = () => {
       <form
         ref={form}
         onSubmit={handleSubmit}
-        className=" sm:w-3/5 flex flex-col space-y-10 px-4 "
+        className=" sm:w-3/5 flex flex-col space-y-8 px-4 "
       >
         <TextField
           id="name-field"
