@@ -3,8 +3,10 @@ import "../App.css";
 import Nav from "../components/Nav";
 import Footer from "../sections/Footer";
 import Hero from "../sections/Hero";
+import About from "../sections/About";
 import Services from "../sections/Services";
 import Testimonials from "../sections/Testimonials";
+
 
 const Homepage = () => {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
@@ -29,10 +31,13 @@ const Homepage = () => {
   }, []);
   return (
     <main>
-      <section className="heroSection dshadow-lg">
+      <Nav showNavbar={showNavbar} />
+      <section className="heroSection ">
         <Hero />
       </section>
-      <Nav showNavbar={showNavbar}/>
+      <section className="about-section">
+        <About />
+      </section>
       <section className=" bg-gradient-to-r from-slate-100 to-white">
         <Services />
       </section>

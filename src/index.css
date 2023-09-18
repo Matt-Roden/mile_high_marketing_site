@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
 @layer components {
@@ -56,6 +57,7 @@
     @apply font-montserrat text-slate-gray text-lg leading-7;
   }
 }
+
 
 /* ::-webkit-scrollbar-track {
   background: transparent; 

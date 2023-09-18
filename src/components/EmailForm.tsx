@@ -5,6 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
+import "./EmailForm.css"
 
 const Date = () => {
   return (
@@ -83,12 +84,18 @@ const EmailForm = () => {
             multiline
             minRows={8}
             name="message"
+            sx={{ 
+              '& .MuiInputBase-input': {
+                // color: '#424949',  // Change to your desired color
+                // fontFamily: 'Poppins'
+              } 
+            }}
           />
         </div>
         <div className=" flex justify-end">
           <button
             type="submit"
-            className="rounded-md bg-blue-600 w-52 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="rounded-md bg-purple-600 w-52 py-3 text-lg font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 transition duration-300 "
           >
             Send email
           </button>
