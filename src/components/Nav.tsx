@@ -10,7 +10,7 @@ const Nav = ({ showNavbar }) => {
   };
 
   return (
-    <header className={`${showNavbar ? "hide" : "show"} fixed top-0 p-5 bg-black text-white w-full flex justify-between sm:items-center z-10`}>
+    <header className={`${showNavbar ? "hide" : "show"} fixed top-0 py-6 px-6 sm:px-20 bg-black text-white w-full flex justify-between sm:items-center z-10`}>
      <img src={mile_high_icon} alt="company logo" className=" h-14 cursor-pointer" onClick={scrollToTop}/>
       <GetStartedButton />
     </header>

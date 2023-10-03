@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
-import { TextField } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { TextField, CircularProgress } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
-import "./EmailForm.css"
+import "./EmailForm.css";
 
 const Date = () => {
   return (
@@ -20,87 +20,113 @@ const Date = () => {
   );
 };
 
-const EmailForm = () => {
+const EmailForm = ({ setDropConfetti }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useRef();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setIsLoading(true);
 
     await emailjs
       .sendForm(
-        "service_koe7hxh",
-        "template_69up1hn",
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         form.current,
-        "iJ_W9mK1_fbgqFPFw"
+        process.env.REACT_APP_PUBLIC_KEY
       )
       .then((result) => {
         if (result.text === "OK") {
-          navigate("/");
+          setDropConfetti(true);
+          setIsLoading(false);
+          setTimeout(() => {
+            navigate("/");
+          }, 5000);
         }
-      });
+      })
+      .catch((error) => navigate("/error"));
   };
 
   return (
-    <main className=" flex flex-col items-center space-y-10 py-10 ">
-      <h1>Let's do this! 🪩</h1>
-      <form
-        ref={form}
-        onSubmit={handleSubmit}
-        className=" sm:w-3/5 flex flex-col space-y-8 px-4 "
-      >
-        <TextField
-          id="name-field"
-          label="Your Name: "
-          variant="outlined"
-          name="name_from"
-          className=""
-        />
-        <TextField
-          id="email-field"
-          label="Your Email: "
-          variant="outlined"
-          name="email_from"
-        />
-        <div className=" flex space-x-5 ">
-          <Date />
-          <div className=" space-x-3 flex items-center">
-            <input
-              type="checkbox"
-              id="not_sure_date"
-              name="not_sure_date"
-              value="true"
-              className=" h-5 w-5"
-            />
-            <label className=" text-lg">Not sure yet</label>
-          </div>
-        </div>
-        <div className=" flex flex-col space-y-3">
-          <span>What can we help you with? Give us the details!</span>
+    <main className=" flex flex-col items-center space-y-8 py-7 ">
+      {/* {isLoading && <LoadingBar isError={isError} isLoading={isLoading} isSuccess={isSuccess} />} */}
+      <h1 className=" text-black">Let's do this! 🪩</h1>
+      {isLoading ? (
+        <CircularProgress />
+      ) : (
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          className=" sm:w-4/5 flex flex-col space-y-5 px-2 sm:px-4"
+        >
           <TextField
-            id="message-field"
-            label=""
+            id="name-field"
+            label="You Name:"
             variant="outlined"
-            multiline
-            minRows={8}
-            name="message"
-            sx={{ 
-              '& .MuiInputBase-input': {
-                // color: '#424949',  // Change to your desired color
-                // fontFamily: 'Poppins'
-              } 
+            name="name_from"
+            sx={{
+              "& .MuiInputBase-input": {
+                fontFamily: "Poppins",
+              },
             }}
           />
-        </div>
-        <div className=" flex justify-end">
-          <button
-            type="submit"
-            className="rounded-md bg-purple-600 w-52 py-3 text-lg font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 transition duration-300 "
-          >
-            Send email
-          </button>
-        </div>
-      </form>
+
+          <TextField
+            id="email-field"
+            label="Email: "
+            variant="outlined"
+            name="email_from"
+            sx={{
+              "& .MuiInputBase-input": {
+                fontFamily: "Poppins",
+              },
+              "& .MuiInputBase-root": {
+                borderColor: "white",
+              },
+            }}
+          />
+          <div className=" flex space-x-5 ">
+            <Date />
+            <div className=" space-x-3 flex items-center">
+              <input
+                type="checkbox"
+                id="not_sure_date"
+                name="not_sure_date"
+                value="true"
+                className=" h-5 w-5"
+              />
+              <label className=" text-lg text-black">Not sure yet</label>
+            </div>
+          </div>
+          <div className=" flex flex-col space-y-3">
+            <span className=" text-black">
+              What can we help you with? Give us the details!
+            </span>
+            <TextField
+              id="message-field"
+              label=""
+              variant="outlined"
+              multiline
+              minRows={8}
+              name="message"
+              sx={{
+                "& .MuiInputBase-input": {
+                  fontFamily: "Poppins",
+                },
+              }}
+            />
+          </div>
+          <div className=" flex justify-end">
+            <button
+              type="submit"
+              className="rounded-md bg-blue-600 w-52 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition duration-300 "
+            >
+              Send email
+            </button>
+          </div>
+        </form>
+      )}
     </main>
   );
 };

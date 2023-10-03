@@ -13,14 +13,14 @@ const Services = () => {
 
         <div className="  flex flex-col sm:flex-row justify-center sm:justify-around sm:space-x-5 px-5 ">
 
-          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
+          <div className="  sm:w-1/3 flex flex-col items-start space-y-4 py-4">
             <img
               src={dj_icon}
-              className=" h-40"
+              className=" h-11"
               alt="full djing service icon"
             />
             <h2 className=" text-2xl ">Full Service DJing</h2>
-            <p className=" w-3/4">
+            <p className=" sm:w-3/4 w-full">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -28,14 +28,14 @@ const Services = () => {
             </p>
           </div>
 
-          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
+          <div className="  sm:w-1/3 flex flex-col items-start space-y-4 py-4">
             <img
               src={audio_editing_icon}
-              className=" h-40"
+              className=" h-11"
               alt="audio editing service icon"
             />
             <h2 className=" text-2xl">Custom audio editing</h2>
-            <p className=" w-3/4">
+            <p className=" sm:w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -43,14 +43,14 @@ const Services = () => {
             </p>
           </div>
 
-          <div className=" bg-gradient-to-r from-white to-slate-100 shadow-lg sm:w-1/3 flex flex-col justify-around items-center space-y-5 py-4">
+          <div className="  sm:w-1/3 flex flex-col items-start space-y-4 py-4">
             <img
               src={karaoke_icon}
-              className=" h-40"
+              className=" h-11"
               alt="karaoke and trivia service icon"
             />
             <h2 className=" text-2xl">Karaoke & Trivia</h2>
-            <p className=" w-3/4">
+            <p className=" sm:w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

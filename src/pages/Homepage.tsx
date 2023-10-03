@@ -7,7 +7,6 @@ import About from "../sections/About";
 import Services from "../sections/Services";
 import Testimonials from "../sections/Testimonials";
 
-
 const Homepage = () => {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
@@ -44,6 +43,7 @@ const Homepage = () => {
       <section className=" bg-gradient-to-r from-slate-100 to-white">
         <Testimonials />
       </section>
+
       {/* <section>
         <Footer />
       </section> */}

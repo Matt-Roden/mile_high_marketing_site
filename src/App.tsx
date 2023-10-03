@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Homepage from './pages/Homepage';
 import GetStarted from './pages/GetStarted';
+import Error from './pages/Error';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/get-started",
     element: <GetStarted/>,
+  },
+  {
+    path: "/error",
+    element: <Error />,
   },
 ]);
 
