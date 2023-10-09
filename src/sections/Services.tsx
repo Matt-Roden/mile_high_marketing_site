@@ -11,7 +11,7 @@ const Services = () => {
           <h1 className=" text-6xl my-8">Services</h1>
         </div>
 
-        <div className="  flex flex-col sm:flex-row justify-center sm:justify-around sm:space-x-5 px-5 ">
+        <div className="  flex flex-col sm:flex-row justify-center  sm:space-x-5 px-5 ">
 
           <div className="  sm:w-1/3 flex flex-col items-start space-y-4 py-4">
             <img
