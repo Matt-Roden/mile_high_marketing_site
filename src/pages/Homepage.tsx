@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 import Nav from "../components/Nav";
-import Footer from "../sections/Footer";
+// import Footer from "../sections/Footer";
 import Hero from "../sections/Hero";
 import About from "../sections/About";
 import Services from "../sections/Services";
