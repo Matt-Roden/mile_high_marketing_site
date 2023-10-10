@@ -28,7 +28,7 @@ const AboutText = () => {
           <strong>Custom Audio Edits:</strong> To give your event a personal
           touch, we offer custom audio edits, molding the music to fit the
           essence of your celebration. Whether it's a special song for your
-          first dance or making a custom edit to make the special moments even
+          first dance or producing a custom edit to make the special moments even
           better, we craft it with precision.
         </li>
         <li className="text-base">
